@@ -10,12 +10,12 @@
     </style>
 </head>
 <body>
-  <img id="main">
+  <div id="main"></div>
   <img>
   <button onclick="fuck()">click</button>
   <script>
   function fuck(){
-  fetch('data.html').then(function (response) {
+  fetch('/data.html').then(function (response) {
   // The API call was successful!
   return response.text();
   }).then(function (html) {
@@ -25,13 +25,13 @@
   var doc = parser.parseFromString(html, 'text/html');
   
   // Get the image file
-  var img = doc.querySelector('img');
-  console.log(img);
-  document.getElementById('main').src = img
+  var img = doc.querySelector('#tee');
+  
+  document.getElementById('main').innerHTML = img
   }).catch(function (err) {
   // There was an error
   console.warn('Something went wrong.', err);
-document.getElementById('main').innerHTML = err
+  document.getElementById('main').innerHTML = err
   });
   /*
   fetch('data.html')
