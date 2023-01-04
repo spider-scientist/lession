@@ -10,7 +10,7 @@
     </style>
 </head>
 <body>
-  <div class="main"></div>
+  <div id="main"></div>
   <img>
   <button onclick="fuck()">click</button>
   <script>
@@ -31,6 +31,7 @@
   }).catch(function (err) {
   // There was an error
   console.warn('Something went wrong.', err);
+document.getElementById('main').innerHTML = err
   });
   /*
   fetch('data.html')
