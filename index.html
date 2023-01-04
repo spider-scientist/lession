@@ -27,7 +27,7 @@
   // Get the image file
   var img = doc.querySelector('p').innerHTML;
   
-  document.getElementById('main').innerHTML = doc.body
+  document.getElementById('main').innerHTML = doc.body.firstChild.textContent
   }).catch(function (err) {
   // There was an error
   console.warn('Something went wrong.', err);
