@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous</title>
+    <style type="text/css">
+    
+    </style>
+</head>
+<body>
+  <div class="main"></div>
+  <img>
+  <button onclick="fuck()">click</button>
+  <script>
+  function fuck(){
+  fetch('data.html').then(function (response) {
+  // The API call was successful!
+  return response.text();
+  }).then(function (html) {
+  
+  // Convert the HTML string into a document object
+  var parser = new DOMParser();
+  var doc = parser.parseFromString(html, 'text/html');
+  
+  // Get the image file
+  var img = doc.querySelector('img');
+  console.log(img);
+  
+  }).catch(function (err) {
+  // There was an error
+  console.warn('Something went wrong.', err);
+  });
+  /*
+  fetch('data.html')
+  .then(function(respon){
+  return respon.text();
+  }).then(function(ans){
+  alert(ans)
+  }).catch(function(error){
+  alert(error);
+  });
+  */
+  }
+  </script>
+</body>
+</html>
