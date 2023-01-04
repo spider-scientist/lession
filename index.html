@@ -10,7 +10,7 @@
     </style>
 </head>
 <body>
-  <div id="main"></div>
+  <img id="main">
   <img>
   <button onclick="fuck()">click</button>
   <script>
@@ -27,7 +27,7 @@
   // Get the image file
   var img = doc.querySelector('img');
   console.log(img);
-  document.getElementById('main').innerHTML = img
+  document.getElementById('main').src = img
   }).catch(function (err) {
   // There was an error
   console.warn('Something went wrong.', err);
